@@ -147,37 +147,3 @@ func (cp ConfirmAsker) Ask(reader io.Reader) (*Answer, error) {
 		Provided:     true,
 	}, nil
 }
-
-// func main() {
-// 	questions := []Asker{
-// 		TextAsker{
-// 			Question: "What is bird",
-// 		},
-// 		TextAsker{
-// 			Question: "No, what is bird",
-// 			Required: true,
-// 		},
-// 		TextAsker{
-// 			Question: "Ok, but, bird",
-// 			Validator: func(response string) error {
-// 				if response != "bird" {
-// 					return errors.New("not bird")
-// 				}
-
-// 				return nil
-// 			},
-// 		},
-// 		ChoiceAsker{
-// 			Choices:  []string{"red", "blue", "orange"},
-// 			Question: "Favorite Colour",
-// 		},
-// 	}
-
-// 	answers, err := Ask(io.Stdin, questions...)
-// 	if err != nil {
-// 		fmt.Fprintf(os.Stderr, "Can't ask the questions: %v\n", err)
-// 		os.Exit(1)
-// 	}
-
-// 	fmt.Printf("%#v\n", answers)
-// }
